@@ -25,9 +25,11 @@ st.write(corr_matrix)
 # Data Quality Metrics
 st.header("Data Quality Metrics")
 st.write("Data Completeness:", dfs[selected_df].count().mean())
-st.write("Data Accuracy:", dfs[selected_df].accuracy_score())
-st.write("Data Consistency:", dfs[selected_df].consistency_score())
 
+# Data Distribution
+st.header("Data Distribution")
+fig = px.histogram(dfs[selected_df], x=dataset.columns[0], nbins=50)
+st.plotly_chart(fig, use_container_width=True)
 
 
 
