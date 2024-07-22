@@ -5,7 +5,7 @@ import plotly.express as px
 
 # Create a Streamlit app
 st.set_page_config(
-        page_title="My Page Title",
+        page_title="MTests Title",
 )
 
 st.title("🎈 Bonn Explorer")
