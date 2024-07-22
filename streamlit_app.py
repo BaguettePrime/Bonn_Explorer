@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 # Create a Streamlit app
 st.title("🎈 Bonn Explorer")
