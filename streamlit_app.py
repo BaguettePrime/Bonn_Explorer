@@ -10,6 +10,32 @@ st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
 
+# Section 1: Introduction
+st.header("Welcome to the Bonn Explorer")
+
+st.write("""
+The Bonn dataset is a popular benchmark dataset for EEG-based seizure detection and epilepsy diagnosis. 
+It was introduced in 2001 by Ralph Andrzejak and colleagues from the University of Bonn, Germany.
+
+This app is designed to explore the Bonn dataset, visualize the EEG signals, extract features, and train a classifier for seizure detection.
+
+In this app, you can:
+* Explore the dataset and visualize the EEG signals
+* Extract features from the EEG signals
+* Train a classifier for seizure detection
+* Evaluate the performance of the classifier
+
+Let's get started!
+""")
+
+# Add a button to navigate to the next page
+if st.button("Explore the Dataset"):
+    # Navigate to the next page
+    st.write("You can now explore the dataset!")
+    # Add a link to the next page (e.g., a page to select the dataset)
+    st.markdown("[Select a dataset](page2)")
+
+
 # Section 1: Data Loading
 st.header("Data Loading")
 
