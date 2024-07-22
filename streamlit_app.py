@@ -37,7 +37,7 @@ if st.button("Explore the Dataset"):
 
 
 # Section 1: Data Loading
-st.header("Data Loading")
+st.header("Dataset inspection and description")
 
 #setA_url = https://raw.githubusercontent.com/BaguettePrime/Bonn_Explorer/main/data/setA.csv
 #response = requests.get(url)
