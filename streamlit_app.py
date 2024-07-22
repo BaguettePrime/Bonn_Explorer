@@ -17,6 +17,22 @@ st.write("""
 The Bonn dataset is a popular benchmark dataset for EEG-based seizure detection and epilepsy diagnosis. 
 It was introduced in 2001 by Ralph Andrzejak and colleagues from the University of Bonn, Germany.
 
+**Dataset Overview**
+
+The Bonn dataset consists of 5 sets (A-E) of EEG recordings, each containing 100 single-channel EEG segments of 23.6 seconds duration. 
+The recordings were obtained from 5 different groups:
+
+* **Set A**: Healthy volunteers
+* **Set B**: Epileptic patients in the seizure-free interval
+* **Set C**: Epileptic patients during a seizure
+* **Set D**: Epileptic patients in the seizure-free interval, but with seizure activity in other brain areas
+* **Set E**: Epileptic patients during a seizure, but with artifacts
+
+The EEG signals were recorded using a 128-channel EEG system, but only a single channel (the Cz electrode) is provided in the dataset. 
+The sampling rate is 173.61 Hz.
+
+**App Overview**
+
 This app is designed to explore the Bonn dataset, visualize the EEG signals, extract features, and train a classifier for seizure detection.
 
 In this app, you can:
