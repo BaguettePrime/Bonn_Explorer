@@ -35,6 +35,10 @@ The recordings were obtained from 5 different groups:
 The EEG signals were recorded using a 128-channel EEG system, but only a single channel (the Cz electrode) is provided in the dataset. 
 The sampling rate is 173.61 Hz.
 
+For more information about the Bonn dataset, please refer to the [original paper](https://www.upf.edu/documents/229517819/232450661/Andrzejak-PhysicalReviewE2001.pdf/0e9a54b8-8993-b400-743e-4d64fa29fb63) by Andrzejak et al.
+
+Bonn dataset download [page](https://www.upf.edu/web/ntsa/downloads/-/asset_publisher/xvT6E4pczrBw/content/2001-indications-of-nonlinear-deterministic-and-finite-dimensional-structures-in-time-series-of-brain-electrical-activity-dependence-on-recording-regi) 
+
 **App Overview**
 
 This app is designed to explore the Bonn dataset, visualize the EEG signals, extract features, and train a classifier for seizure detection.
