@@ -19,6 +19,10 @@ with st.expander(selected_df, expanded=False):
     st.write(dfs[selected_df])
     st.write(dfs[selected_df].describe())
 
+corr_matrix = dfs[selected_df].corr()
+st.write(corr_matrix)
+
+
 
 
 
