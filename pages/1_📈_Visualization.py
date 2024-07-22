@@ -28,7 +28,7 @@ st.write("Data Completeness:", dfs[selected_df].count().mean())
 
 # Data Distribution
 st.header("Data Distribution")
-fig = px.histogram(dfs[selected_df], x=ddfs[selected_df].columns[0], nbins=50)
+fig = px.histogram(dfs[selected_df], x=dfs[selected_df].columns[0], nbins=50)
 st.plotly_chart(fig, use_container_width=True)
 
 
