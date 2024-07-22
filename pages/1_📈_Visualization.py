@@ -17,4 +17,9 @@ selected_df = st.selectbox('Select a dataframe:', list(dfs.keys()),key = 1)
 
 with st.expander(selected_df, expanded=False):
     st.write(dfs[selected_df])
+    st.write(dfs[selected_df].describe())
+
+
+
+
 
