@@ -35,7 +35,7 @@ with st.expander(selected_df, expanded=False):
     st.write(dfs[selected_df])
 
 
-st.dataframe(dfA)
+#st.dataframe(dfA)
 
 # Section 1: Data Vizualisation
 st.header("Data Vizualisation")
