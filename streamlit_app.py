@@ -42,6 +42,7 @@ with st.expander(selected_df, expanded=False):
 # Section 1: Data Vizualisation
 st.header("Data Vizualisation")
 # create a selectbox widget to select the dataframe
+@st.cache_data
 selected_df1 = st.selectbox('Select a dataframe:', list(dfs.keys()),key = 2)
 selected_df2 = dfs[selected_df1]
 
