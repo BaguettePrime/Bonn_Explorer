@@ -22,6 +22,12 @@ with st.expander(selected_df, expanded=False):
 corr_matrix = dfs[selected_df].corr()
 st.write(corr_matrix)
 
+# Data Quality Metrics
+st.header("Data Quality Metrics")
+st.write("Data Completeness:", dfs[selected_df].count().mean())
+st.write("Data Accuracy:", dfs[selected_df].accuracy_score())
+st.write("Data Consistency:", dfs[selected_df].consistency_score())
+
 
 
 
