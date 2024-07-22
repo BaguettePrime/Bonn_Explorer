@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import os
 import plotly.express as px
+import numpy as np
+from scipy import stats
+
 
 dfA = pd.read_csv("./data/setA.csv")
 dfB = pd.read_csv("./data/setB.csv")
@@ -30,6 +33,15 @@ st.write("Data Completeness:", dfs[selected_df].count().mean())
 st.header("Data Distribution")
 fig = px.histogram(dfs[selected_df], x=dfs[selected_df].columns[0], nbins=25)
 st.plotly_chart(fig, use_container_width=True)
+
+
+# Calculate metrics
+skewness = stats.skew(dfs[selected_df])
+kurtosis = stats.kurtosis(dfs[selected_df])
+
+# Display metrics
+st.write("Skewness:", skewness)
+st.write("Kurtosis:", kurtosis)
 
 
 
