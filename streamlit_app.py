@@ -11,8 +11,7 @@ st.set_page_config(
 st.title("🧠 Bonn Explorer")
 
 st.write(
-    "Let's start exploring! 
-    Everything you need is (almost) here: [docs.streamlit.io](https://docs.streamlit.io/)."
+    "Let's start exploring! /n Everything you need is (almost) here: [docs.streamlit.io](https://docs.streamlit.io/)."
 )
 
 # Section 1: Introduction
