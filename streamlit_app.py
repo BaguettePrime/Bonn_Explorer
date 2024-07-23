@@ -61,7 +61,7 @@ Let's get started!
  #   st.write("You can now explore the dataset!")
     # Add a link to the next page (e.g., a page to select the dataset)
   #  st.markdown("[Select a dataset](page2)")
-
+st.write('Band-pass filter settings were 0.53–40 Hz ~12 dB/oct.!.')
 
 st.header("Dataset description")
 
