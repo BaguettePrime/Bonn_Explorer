@@ -108,5 +108,5 @@ fig = px.line(selected_df2, x=selected_df2.index, y=selected_column)
 # display the figure
 st.plotly_chart(fig, use_container_width=True)
 
-st.image('./data/Table.png', caption='Sunrise by the mountains')
+st.image('data/Table.png', caption='Sunrise by the mountains')
 
