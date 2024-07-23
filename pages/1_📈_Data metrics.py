@@ -26,7 +26,7 @@ corr_matrix = dfs[selected_df].corr()
 st.write(corr_matrix)
 
 # Data Quality Metrics
-st.header("Data Quality Metrics")
+st.header("Data Quality")
 st.write("Data Completeness:", dfs[selected_df].count().mean())
 
 # Data Distribution
