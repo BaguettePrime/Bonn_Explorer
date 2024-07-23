@@ -22,7 +22,7 @@ selected_df = st.selectbox('Select a dataframe:', list(dfs.keys()),key = 1)
 st.header("Data Quality")
 st.write("Data Completeness:", dfs[selected_df].count().mean())
 
-with st.expander(selected_df, expanded=True):
+with st.expander(selected_df, expanded=False):
     st.write(dfs[selected_df])
 
 st.write(dfs[selected_df].describe())
