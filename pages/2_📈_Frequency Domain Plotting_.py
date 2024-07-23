@@ -5,6 +5,7 @@ import plotly.express as px
 import numpy as np
 from scipy import stats
 
+st.header("Data Vizualisation")
 
 dfA = pd.read_csv("./data/setA.csv")
 dfB = pd.read_csv("./data/setB.csv")
@@ -17,7 +18,8 @@ dfs = {'DFA': dfA, 'DFB': dfB, 'DFC': dfC, 'DFD': dfD, 'DFE': dfE}
 
 # create a selectbox widget to select the dataframe
 selected_df = st.selectbox('Select a dataframe:', list(dfs.keys()),key = 1)
-column_names = selected_df.columns.tolist()
+selected_df1 = dfs[selected_df]
+column_names = selected_df1.columns.tolist()
 selected_column = st.selectbox('Select a column:', column_names)
 
 
