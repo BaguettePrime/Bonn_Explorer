@@ -12,7 +12,7 @@ st.title("🧠 Bonn Explorer")
 
 st.write("""
     Let's start exploring! 
-    Everything you need is (almost) here: [docs.streamlit.io](https://docs.streamlit.io/)."
+    Everything you need is (almost) here: [docs.streamlit.io](https://docs.streamlit.io/).
 """)
 
 # Section 1: Introduction
