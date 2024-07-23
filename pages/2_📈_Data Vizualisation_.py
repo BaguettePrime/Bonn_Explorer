@@ -57,6 +57,7 @@ fft_fig = px.line(x=fft_frequencies, y=np.abs(fft_values))
 fft_fig.update_layout(title='FFT of the Time Series Data',
                       xaxis_title='Frequency (Hz)',
                       yaxis_title='Amplitude',xaxis=dict(range=[0, 55])) 
+fft_fig.update_traces(line=dict(width=1.0))
                       
 
 # display the FFT figure
