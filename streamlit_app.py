@@ -61,8 +61,7 @@ Let's get started!
   #  st.markdown("[Select a dataset](page2)")
 
 
-# Section 1: Data Loading
-st.header("Dataset inspection and description")
+st.header("Dataset description")
 
 dfA = pd.read_csv("./data/setA.csv")
 dfB = pd.read_csv("./data/setB.csv")
