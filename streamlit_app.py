@@ -8,7 +8,7 @@ st.set_page_config(
         page_title="🧠 Bonn Explorer",
 )
 
-st.title("🧠 Bonn Explorer")
+st.title("🧠 Welcome to the Bonn Explorer")
 
 st.write("""
 Let's start exploring! 
@@ -16,7 +16,7 @@ Everything you need is (almost) here: [docs.streamlit.io](https://docs.streamlit
 """)
 
 # Section 1: Introduction
-st.header("Welcome to the Bonn Explorer")
+#st.header("Welcome to the Bonn Explorer")
 
 st.write("""
 The Bonn dataset has become a standard benchmark in the field of EEG analysis and seizure detection, allowing researchers to compare different methods and algorithms on a common ground.
