@@ -5,6 +5,12 @@ import plotly.express as px
 import numpy as np
 from scipy import stats
 
+# Generate an array of timestamps
+
+sf= 173.86
+x = 23.6
+timestamps = np.arange(0, x, 1/sf)
+
 st.header("Data Vizualisation")
 
 dfA = pd.read_csv("./data/setA.csv")
@@ -27,7 +33,8 @@ selected_column = st.selectbox('Select a column:', column_names)
 
 
 # create a figure using plotly express
-fig = px.line(selected_df1, x=selected_df1.index, y=selected_column)
+fig = px.line(selected_df1, x=timestamps, y=selected_column)
+#fig = px.line(selected_df1, x=selected_df1.index, y=selected_column)
 # This styles the line
 fig.update_traces(line=dict(width=1.0))
 
