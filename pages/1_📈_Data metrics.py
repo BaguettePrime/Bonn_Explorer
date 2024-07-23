@@ -18,22 +18,19 @@ dfs = {'DFA': dfA, 'DFB': dfB, 'DFC': dfC, 'DFD': dfD, 'DFE': dfE}
 # create a selectbox widget to select the dataframe
 selected_df = st.selectbox('Select a dataframe:', list(dfs.keys()),key = 1)
 
-with st.expander(selected_df, expanded=False):
-    st.write(dfs[selected_df])
-    st.write(dfs[selected_df].describe())
-
-corr_matrix = dfs[selected_df].corr()
-st.write(corr_matrix)
-
 # Data Quality Metrics
 st.header("Data Quality")
 st.write("Data Completeness:", dfs[selected_df].count().mean())
+
+with st.expander(selected_df, expanded=True):
+    st.write(dfs[selected_df])
+
+st.write(dfs[selected_df].describe())
 
 # Data Distribution
 st.header("Data Distribution")
 fig = px.histogram(dfs[selected_df], x=dfs[selected_df].columns[0], nbins=25)
 st.plotly_chart(fig, use_container_width=True)
-
 
 # Calculate metrics
 skewness = stats.skew(dfs[selected_df])
