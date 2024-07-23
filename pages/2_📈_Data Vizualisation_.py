@@ -52,3 +52,12 @@ st.plotly_chart(fig, use_container_width=True)
 fft_values = np.fft.fft(selected_df1[selected_column].values)
 fft_frequencies = np.fft.fftfreq(len(selected_df1[selected_column].values), d=1/sf)
 
+# create a figure using plotly express for the FFT
+fft_fig = px.line(x=fft_frequencies, y=np.abs(fft_values))
+fft_fig.update_layout(title='FFT of the Time Series Data',
+                      xaxis_title='Frequency (Hz)',
+                      yaxis_title='Amplitude')
+
+# display the FFT figure
+st.plotly_chart(fft_fig, use_container_width=True)
+
