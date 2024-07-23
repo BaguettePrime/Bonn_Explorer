@@ -19,7 +19,7 @@ Everything you need is (almost) here: [docs.streamlit.io](https://docs.streamlit
 st.header("Welcome to the Bonn Explorer")
 
 st.write("""
-The Bonn dataset is a popular benchmark dataset for EEG-based seizure detection and epilepsy diagnosis. 
+The Bonn dataset has become a standard benchmark in the field of EEG analysis and seizure detection, allowing researchers to compare different methods and algorithms on a common ground.
 It was introduced in 2001 by Ralph Andrzejak and colleagues from the University of Bonn, Germany.
 
 **Dataset Overview**
