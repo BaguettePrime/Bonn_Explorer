@@ -46,3 +46,7 @@ fig.update_traces(line=dict(width=1.0))
 # display the figure
 st.plotly_chart(fig, use_container_width=True)
 
+# compute the FFT of the selected time series
+fft_values = np.fft.fft(selected_df1[selected_column].values)
+fft_frequencies = np.fft.fftfreq(len(selected_df1[selected_column].values), d=1/sf)
+
