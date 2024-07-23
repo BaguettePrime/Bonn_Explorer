@@ -8,7 +8,7 @@ from scipy import stats
 # Generate an array of timestamps
 
 x = 4097  # number of datapoints
-sf = 173.86  # sampling frequency
+sf = 173.61  # sampling frequency
 
 # Calculate the total duration in seconds
 duration = x / sf
