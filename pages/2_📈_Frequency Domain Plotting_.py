@@ -27,7 +27,7 @@ selected_column = st.selectbox('Select a column:', column_names)
 
 
 # create a figure using plotly express
-fig = px.line(selected_df1, x=selected_df1.index, y=selected_column,width=0.5)
+fig = px.line(selected_df1, x=selected_df1.index, y=selected_column)
 
 # display the figure
 st.plotly_chart(fig, use_container_width=True)
