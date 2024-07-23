@@ -47,6 +47,7 @@ This app is designed to explore the Bonn dataset, visualize the EEG signals, ext
 In this app, you can:
 * Explore the dataset and visualize the EEG signals
 * Extract features from the EEG signals
+In this app, you will wait for the next update to:
 * Train a classifier for seizure detection
 * Evaluate the performance of the classifier
 
