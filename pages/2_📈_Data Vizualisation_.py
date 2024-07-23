@@ -7,9 +7,14 @@ from scipy import stats
 
 # Generate an array of timestamps
 
-sf= 173.86
-x = 23.6
-timestamps = np.arange(0, x, 1/sf)
+x = 4097  # number of datapoints
+sf = 173.86  # sampling frequency
+
+# Calculate the total duration in seconds
+duration = x / sf
+
+# Generate an array of timestamps
+timestamps = np.arange(0, duration, 1/sf)
 
 st.header("Data Vizualisation")
 
