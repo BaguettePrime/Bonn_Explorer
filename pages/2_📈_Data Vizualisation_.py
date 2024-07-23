@@ -39,12 +39,11 @@ selected_column = st.selectbox('Select a column:', column_names)
 
 # create a figure using plotly express
 fig = px.line(selected_df1, x=timestamps, y=selected_column, 
-              title='Time Series Data',
-              xaxis_title ='Time (s)',
-              yaxis_title ='Amplitude')
+              title='Time Series Data')
 #fig = px.line(selected_df1, x=selected_df1.index, y=selected_column)
 # This styles the line
 fig.update_traces(line=dict(width=1.0))
+fig.update_layout(xaxis_title='Time (s)', yaxis_title="Amplitude")
 
 # display the figure
 st.plotly_chart(fig, use_container_width=True)
