@@ -5,13 +5,14 @@ import plotly.express as px
 
 # Create a Streamlit app
 st.set_page_config(
-        page_title="MTests Title",
+        page_title="🧠 Bonn Explorer",
 )
 
-st.title("🎈 Bonn Explorer")
+st.title("🧠 Bonn Explorer")
 
 st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
+    "Let's start exploring! 
+    Everything you need is (almost) here: [docs.streamlit.io](https://docs.streamlit.io/)."
 )
 
 # Section 1: Introduction
@@ -53,11 +54,11 @@ Let's get started!
 """)
 
 # Add a button to navigate to the next page
-if st.button("Explore the Dataset"):
+#if st.button("Explore the Dataset"):
     # Navigate to the next page
-    st.write("You can now explore the dataset!")
+ #   st.write("You can now explore the dataset!")
     # Add a link to the next page (e.g., a page to select the dataset)
-    st.markdown("[Select a dataset](page2)")
+  #  st.markdown("[Select a dataset](page2)")
 
 
 # Section 1: Data Loading
