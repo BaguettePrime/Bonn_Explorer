@@ -70,3 +70,18 @@ fig1 = px.line(df_psd, x='Frequency', y='PSD', title='Power Spectral Density')
 fig1.update_layout(xaxis_title='Frequency (Hz)', yaxis_title='Power Spectral Density (dB/Hz)')
 st.plotly_chart(fig1, use_container_width=True)
 
+
+bands = {
+        'Delta': (0.5, 4),
+        'Theta': (4, 8),
+        'Alpha': (8, 12),
+        'Beta': (12, 30),
+        'Gamma': (30, 100)
+    }
+    
+powers = {}
+for band, (fmin, fmax) in bands.items():
+    idx = np.where((freqs >= fmin) & (freqs <= fmax))[0]
+    powers[band] = np.trapz(psd[idx], freqs[idx])
+fig = px.bar(df, x= bands, y= powers, title='Frequency Bands')
+
