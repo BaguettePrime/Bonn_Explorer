@@ -76,11 +76,11 @@ with st.expander("PSD Graph"):
 
 
 bands = {
-        'Delta (0.5, 4)': (0.5, 4),
-        'Theta': (4, 8),
-        'Alpha': (8, 12),
-        'Beta': (12, 30),
-        'Gamma': (30, 100)
+        'Delta (0.5-4)': (0.5, 4),
+        'Theta (4-8)': (4, 8),
+        'Alpha (8-12)': (8, 12),
+        'Beta (12-30)': (12, 30),
+        'Gamma (30-100)': (30, 100)
     }
     
 powers = {}
