@@ -66,7 +66,7 @@ freqs, psd = welch(selected_df1[selected_column].values, fs=sf, nperseg=256, nov
 df_psd = pd.DataFrame({'Frequency': freqs, 'PSD': psd})
 
 # plot the PSD using Plotly Express
-fig = px.line(df_psd, x='Frequency', y='PSD', title='Power Spectral Density')
-fig.update_layout(xaxis_title='Frequency (Hz)', yaxis_title='Power Spectral Density (dB/Hz)')
-fig.show()
+fig1 = px.line(df_psd, x='Frequency', y='PSD', title='Power Spectral Density')
+fig1.update_layout(xaxis_title='Frequency (Hz)', yaxis_title='Power Spectral Density (dB/Hz)')
+st.plotly_chart(fig1, use_container_width=True)
 
