@@ -83,5 +83,5 @@ powers = {}
 for band, (fmin, fmax) in bands.items():
     idx = np.where((freqs >= fmin) & (freqs <= fmax))[0]
     powers[band] = np.trapz(psd[idx], freqs[idx])
-fig = px.bar(df, x= bands, y= powers, title='Frequency Bands')
+fig = px.bar(powers, x= bands, y= powers, title='Frequency Bands')
 
