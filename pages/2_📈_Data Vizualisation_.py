@@ -4,6 +4,7 @@ import os
 import plotly.express as px
 import numpy as np
 from scipy import stats
+from scipy.signal import welch
 
 # Generate an array of timestamps
 
@@ -33,10 +34,6 @@ selected_df1 = dfs[selected_df]
 column_names = selected_df1.columns.tolist()
 selected_column = st.selectbox('Select a column:', column_names)
 
-
-
-
-
 # create a figure using plotly express
 fig = px.line(selected_df1, x=timestamps, y=selected_column, 
               title='Time Series Data')
@@ -58,8 +55,18 @@ fft_fig.update_layout(title='FFT of the Time Series Data',
                       xaxis_title='Frequency (Hz)',
                       yaxis_title='Amplitude',xaxis=dict(range=[0, 55])) 
 fft_fig.update_traces(line=dict(width=1.0),line_color = 'red')
-                      
 
 # display the FFT figure
 st.plotly_chart(fft_fig, use_container_width=True)
+
+
+freqs, psd = welch(selected_df1[selected_column].values, fs=sf, nperseg=256, noverlap=128)
+
+# create a Pandas dataframe with the frequency and PSD values
+df_psd = pd.DataFrame({'Frequency': freqs, 'PSD': psd})
+
+# plot the PSD using Plotly Express
+fig = px.line(df_psd, x='Frequency', y='PSD', title='Power Spectral Density')
+fig.update_layout(xaxis_title='Frequency (Hz)', yaxis_title='Power Spectral Density (dB/Hz)')
+fig.show()
 
