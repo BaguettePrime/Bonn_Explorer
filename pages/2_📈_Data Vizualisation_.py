@@ -68,7 +68,9 @@ df_psd = pd.DataFrame({'Frequency': freqs, 'PSD': psd})
 # plot the PSD using Plotly Express
 fig1 = px.line(df_psd, x='Frequency', y='PSD', title='Power Spectral Density')
 fig1.update_layout(xaxis_title='Frequency (Hz)', yaxis_title='Power Spectral Density (dB/Hz)')
-st.plotly_chart(fig1, use_container_width=True)
+
+with st.expander("PSD Graph"):
+  st.plotly_chart(fig1, use_container_width=True)
 
 
 bands = {
@@ -89,6 +91,7 @@ dfbands = pd.DataFrame(list(powers.items()), columns=['Band', 'Power'])
 
 # Create a bar chart with Plotly Express
 fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands')
-st.plotly_chart(fig2, use_container_width=True)
+with st.expander("PSD bands Graph"):
+  st.plotly_chart(fig2, use_container_width=True)
 
     
