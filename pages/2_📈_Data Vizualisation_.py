@@ -76,7 +76,7 @@ with st.expander("PSD Graph"):
 
 
 bands = {
-        'Delta': (0.5, 4),
+        'Delta (0.5, 4)': (0.5, 4),
         'Theta': (4, 8),
         'Alpha': (8, 12),
         'Beta': (12, 30),
