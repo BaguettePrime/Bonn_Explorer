@@ -57,7 +57,8 @@ fft_fig.update_layout(title='FFT of the Time Series Data',
 fft_fig.update_traces(line=dict(width=1.0),line_color = 'red')
 
 # display the FFT figure
-st.plotly_chart(fft_fig, use_container_width=True)
+with st.expander("PSD bands Graph"):
+  st.plotly_chart(fft_fig, use_container_width=True)
 
 
 freqs, psd = welch(selected_df1[selected_column].values, fs=sf, nperseg=256, noverlap=128)
