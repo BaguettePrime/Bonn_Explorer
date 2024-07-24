@@ -92,7 +92,7 @@ for band, (fmin, fmax) in bands.items():
 dfbands = pd.DataFrame(list(powers.items()), columns=['Band', 'Power'])
 
 # Create a bar chart with Plotly Express
-fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands')
+fig2 = px.bar(dfbands, x='', y='Power', title='Frequency Bands')
 with st.expander("PSD bands Graph"):
   st.plotly_chart(fig2, use_container_width=True)
 
