@@ -83,5 +83,12 @@ powers = {}
 for band, (fmin, fmax) in bands.items():
     idx = np.where((freqs >= fmin) & (freqs <= fmax))[0]
     powers[band] = np.trapz(psd[idx], freqs[idx])
-fig = px.bar(powers, x= bands, y= powers, title='Frequency Bands')
 
+# Create a pandas dataframe from the powers dictionary
+dfbands = pd.DataFrame(list(powers.items()), columns=['Band', 'Power'])
+
+# Create a bar chart with Plotly Express
+fig2 = px.bar(df, x='Band', y='Power', title='Frequency Bands')
+st.plotly_chart(fig2, use_container_width=True)
+
+    
