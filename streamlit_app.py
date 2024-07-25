@@ -3,7 +3,6 @@ import pandas as pd
 import os
 import plotly.express as px
 
-# Create a Streamlit app
 st.set_page_config(
         page_title="🧠 Bonn Explorer",
 )
@@ -15,7 +14,6 @@ Let's start exploring!
 Everything you need is (almost) here: [docs.streamlit.io](https://docs.streamlit.io/).
 """)
 
-# Section 1: Introduction
 #st.header("Welcome to the Bonn Explorer")
 
 st.write("""
@@ -55,25 +53,8 @@ In this app, you will wait for the next update to:
 Let's get started!
 """)
 
-# Add a button to navigate to the next page
-#if st.button("Explore the Dataset"):
-    # Navigate to the next page
- #   st.write("You can now explore the dataset!")
-    # Add a link to the next page (e.g., a page to select the dataset)
-  #  st.markdown("[Select a dataset](page2)")
 st.write('Band-pass filter settings were 0.53–40 Hz ~12 dB/oct.!. SF 173.61')
 
 st.header("Dataset description")
-
-dfA = pd.read_csv("./data/setA.csv")
-dfB = pd.read_csv("./data/setB.csv")
-dfC = pd.read_csv("./data/setC.csv")
-dfD = pd.read_csv("./data/setD.csv")
-dfE = pd.read_csv("./data/setE.csv")
-
-# create a dictionary to store the dataframes
-dfs = {'Set A': dfA, 'Set B': dfB, 'Set C': dfC, 'Set D': dfD, 'Set E': dfE}
-dfset = {'Set A': 'Volunteers - Open Eyes', 'Set B': 'Volunteers - Closed Eyes', 'Set C': 'Patients(epi_zone) - Seizure free', 'Set D': 'Patients(Non_epi_zone) - Seizure free', 'Set E': 'Patients(epi_zone) - Seizure activity'}
-
 st.image('data/Table.png', caption='Technical summary')
 
