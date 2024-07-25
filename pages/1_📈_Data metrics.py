@@ -45,10 +45,14 @@ with st.expander(selected_df, expanded=False):
     st.plotly_chart(fig, use_container_width=True)
 
 fig1 = px.box(selected_df1, x=selected_column)
-st.plotly_chart(fig1, use_container_width=True)
+
+with st.expander(selected_df, expanded=False):
+    st.plotly_chart(fig1, use_container_width=True)
 
 fig2 = px.scatter(selected_df1, x=selected_column, y=selected_df1.columns[1])
-st.plotly_chart(fig2, use_container_width=True)
+
+with st.expander(selected_df, expanded=False):
+    st.plotly_chart(fig2, use_container_width=True)
 
 
 
