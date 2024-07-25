@@ -46,20 +46,6 @@ fig.update_layout(xaxis_title='Time (s)', yaxis_title="Amplitude")
 with st.expander("Raw signal", expanded=True):
   st.plotly_chart(fig, use_container_width=True)
 
-# compute the FFT of the selected time series
-fft_values = np.fft.fft(selected_df1[selected_column].values)
-fft_frequencies = np.fft.fftfreq(len(selected_df1[selected_column].values), d=1/sf)
-
-# create a figure using plotly express for the FFT
-fft_fig = px.line(x=fft_frequencies, y=np.abs(fft_values))
-fft_fig.update_layout(title='FFT of the Time Series Data',
-                      xaxis_title='Frequency (Hz)',
-                      yaxis_title='Amplitude',xaxis=dict(range=[0, 55])) 
-fft_fig.update_traces(line=dict(width=1.0),line_color = 'red')
-
-# display the FFT figure
-with st.expander("PSD bands Graph"):
-  st.plotly_chart(fft_fig, use_container_width=True)
 
 
 freqs, psd = welch(selected_df1[selected_column].values, fs=sf, nperseg=256, noverlap=128)
@@ -95,5 +81,20 @@ dfbands = pd.DataFrame(list(powers.items()), columns=['Band', 'Power'])
 fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands')
 with st.expander("PSD bands Graph"):
   st.plotly_chart(fig2, use_container_width=True)
+
+
+# compute the FFT of the selected time series
+#fft_values = np.fft.fft(selected_df1[selected_column].values)
+#fft_frequencies = np.fft.fftfreq(len(selected_df1[selected_column].values), d=1/sf)
+# create a figure using plotly express for the FFT
+#fft_fig = px.line(x=fft_frequencies, y=np.abs(fft_values))
+#fft_fig.update_layout(title='FFT of the Time Series Data',
+                      #xaxis_title='Frequency (Hz)',
+                      #yaxis_title='Amplitude',xaxis=dict(range=[0, 55])) 
+#fft_fig.update_traces(line=dict(width=1.0),line_color = 'red')
+# display the FFT figure
+#with st.expander("PSD bands Graph"):
+  #st.plotly_chart(fft_fig, use_container_width=True)
+
 
     
