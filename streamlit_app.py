@@ -72,7 +72,8 @@ dfD = pd.read_csv("./data/setD.csv")
 dfE = pd.read_csv("./data/setE.csv")
 
 # create a dictionary to store the dataframes
-dfs = {'DFA': dfA, 'DFB': dfB, 'DFC': dfC, 'DFD': dfD, 'DFE': dfE}
+dfs = {'Set A': dfA, 'Set B': dfB, 'Set C': dfC, 'Set D': dfD, 'Set E': dfE}
+dfset = {'Set A': 'Volunteers - Open Eyes', 'Set B': 'Volunteers - Closed Eyes', 'Set C': 'Patients(epi_zone) - Seizure free', 'Set D': 'Patients(Non_epi_zone) - Seizure free', 'Set E': 'Patients(epi_zone) - Seizure activity'}
 
-st.image('data/Table.png', caption='Sunrise by the mountains')
+st.image('data/Table.png', caption='Technical summary')
 
