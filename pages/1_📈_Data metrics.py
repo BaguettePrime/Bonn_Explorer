@@ -23,7 +23,8 @@ selected_column = st.selectbox('Select a column:', column_names)
 st.header("Data Quality")
 st.write("Data Completeness:", dfs[selected_df].count().mean())
 
-with st.expander(selected_df, expanded=False):
+#with st.expander(selected_df, expanded=False):
+with st.expander('Dataset', expanded=False):
     st.write(dfs[selected_df])
 
 with st.expander('Data Description', expanded=False):
