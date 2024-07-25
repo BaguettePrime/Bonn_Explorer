@@ -37,7 +37,8 @@ st.write(dfs[selected_df].describe())
 
 # Data Distribution
 st.header("Data Distribution")
-fig = px.histogram(dfs[selected_df], x=dfs[selected_df].columns[selected_column], nbins=25)
+#fig = px.histogram(dfs[selected_df], x=dfs[selected_df].columns[0], nbins=25)
+fig = px.histogram(dfs[selected_df], x=selected_df1.columns[selected_column], nbins=25)
 st.plotly_chart(fig, use_container_width=True)
 
 # Calculate metrics
