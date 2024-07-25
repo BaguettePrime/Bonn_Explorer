@@ -43,7 +43,7 @@ fig.update_traces(line=dict(width=1.0))
 fig.update_layout(xaxis_title='Time (s)', yaxis_title="Amplitude")
 
 # display the figure
-with st.expander("Raw signal", expanded=True)):
+with st.expander("Raw signal", expanded=True):
   st.plotly_chart(fig, use_container_width=True)
 
 # compute the FFT of the selected time series
