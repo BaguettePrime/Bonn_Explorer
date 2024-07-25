@@ -6,16 +6,22 @@ import numpy as np
 from scipy import stats
 from scipy.signal import welch
 
-# Generate an array of timestamps
-
+# Technical information from the dataset
 x = 4097  # number of datapoints
 sf = 173.61  # sampling frequency
-
-# Calculate the total duration in seconds
+# Total duration in seconds
 duration = x / sf
-
-# Generate an array of timestamps
+# Timestamps
 timestamps = np.arange(0, duration, 1/sf)
+
+bands = {
+        'Delta (0.5-4)': (0.5, 4),
+        'Theta (4-8)': (4, 8),
+        'Alpha (8-12)': (8, 12),
+        'Beta (12-30)': (12, 30),
+        'Gamma (30-100)': (30, 100)
+    }
+powers = {}
 
 st.header("Data Vizualisation")
 
@@ -25,59 +31,37 @@ dfC = pd.read_csv("./data/setC.csv")
 dfD = pd.read_csv("./data/setD.csv")
 dfE = pd.read_csv("./data/setE.csv")
 
-# create a dictionary to store the dataframes
 dfs = {'Set A - Volunteers - Open Eyes': dfA, 'Set B - Volunteers - Closed Eyes': dfB, 'Set C - Patients (epi_zone) - Seizure free': dfC, 'Set D - Patients (Non_epi_zone) - Seizure free': dfD, 'Set E - Patients (epi_zone) - Seizure activity': dfE}
 
-# create a selectbox widget to select the dataframe
 selected_df = st.selectbox('Select a dataframe:', list(dfs.keys()),key = 1)
 selected_df1 = dfs[selected_df]
 column_names = selected_df1.columns.tolist()
 selected_column = st.selectbox('Select a column:', column_names)
 
-# create a figure using plotly express
+
 fig = px.line(selected_df1, x=timestamps, y=selected_column, 
               title='Time Series Data')
-#fig = px.line(selected_df1, x=selected_df1.index, y=selected_column)
-# This styles the line
 fig.update_traces(line=dict(width=1.0))
 fig.update_layout(xaxis_title='Time (s)', yaxis_title="Amplitude")
 
-# display the figure
 with st.expander("Raw signal", expanded=True):
   st.plotly_chart(fig, use_container_width=True)
 
-
-
 freqs, psd = welch(selected_df1[selected_column].values, fs=sf, nperseg=256, noverlap=128)
-
-# create a Pandas dataframe with the frequency and PSD values
 df_psd = pd.DataFrame({'Frequency': freqs, 'PSD': psd})
 
-# plot the PSD using Plotly Express
 fig1 = px.line(df_psd, x='Frequency', y='PSD', title='Power Spectral Density')
 fig1.update_layout(xaxis_title='Frequency (Hz)', yaxis_title='Power Spectral Density (dB/Hz)')
 
 with st.expander("PSD Graph"):
   st.plotly_chart(fig1, use_container_width=True)
 
-
-bands = {
-        'Delta (0.5-4)': (0.5, 4),
-        'Theta (4-8)': (4, 8),
-        'Alpha (8-12)': (8, 12),
-        'Beta (12-30)': (12, 30),
-        'Gamma (30-100)': (30, 100)
-    }
-    
-powers = {}
 for band, (fmin, fmax) in bands.items():
     idx = np.where((freqs >= fmin) & (freqs <= fmax))[0]
     powers[band] = np.trapz(psd[idx], freqs[idx])
 
-# Create a pandas dataframe from the powers dictionary
 dfbands = pd.DataFrame(list(powers.items()), columns=['Band', 'Power'])
 
-# Create a bar chart with Plotly Express
 fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands')
 with st.expander("PSD bands Graph"):
   st.plotly_chart(fig2, use_container_width=True)
