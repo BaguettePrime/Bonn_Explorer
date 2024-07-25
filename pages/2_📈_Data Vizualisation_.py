@@ -64,10 +64,16 @@ dfbands = pd.DataFrame(list(powers.items()), columns=['Band', 'Power'])
 
 #fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands')
 
-fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands',
-              color_discrete_sequence=['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd'])
-		
+colors = {
+    'Delta': '#1f77b4',
+    'Theta': '#ff7f0e',
+    'Alpha': '#2ca02c',
+    'Beta': '#d62728',
+    'Gamma': '#9467bd'
+}
 
+fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands',
+              color='Band', color_discrete_map=colors)
 
 
 
