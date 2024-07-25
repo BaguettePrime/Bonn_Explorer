@@ -23,6 +23,14 @@ bands = {
     }
 powers = {}
 
+colors = {
+    'Delta': '#1f77b4',
+    'Theta': '#ff7f0e',
+    'Alpha': '#2ca02c',
+    'Beta': '#d62728',
+    'Gamma': '#9467bd'
+}
+
 st.header("Data Vizualisation")
 
 dfA = pd.read_csv("./data/setA.csv")
@@ -62,22 +70,8 @@ for band, (fmin, fmax) in bands.items():
 
 dfbands = pd.DataFrame(list(powers.items()), columns=['Band', 'Power'])
 
-#fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands')
-
-colors = {
-    'Delta': '#1f77b4',
-    'Theta': '#ff7f0e',
-    'Alpha': '#2ca02c',
-    'Beta': '#d62728',
-    'Gamma': '#9467bd'
-}
-
 fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands',
               color='Band', color_discrete_map=colors)
-
-
-
-
 with st.expander("PSD bands Graph"):
   st.plotly_chart(fig2, use_container_width=True)
 
