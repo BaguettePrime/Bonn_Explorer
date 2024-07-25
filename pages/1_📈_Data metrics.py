@@ -41,13 +41,24 @@ st.header("Data Distribution")
 fig = px.histogram(dfs[selected_df], x=selected_column, nbins=25)
 st.plotly_chart(fig, use_container_width=True)
 
+fig1 = px.box(selected_df1, x=selected_column)
+st.plotly_chart(fig1, use_container_width=True)
+
+fig2 = px.scatter(selected_df1, x=selected_column, y=selected_df1.columns[1])
+st.plotly_chart(fig2, use_container_width=True)
+
+
+
+
+
+
 # Calculate metrics
-skewness = stats.skew(dfs[selected_df])
-kurtosis = stats.kurtosis(dfs[selected_df])
+#skewness = stats.skew(dfs[selected_df])
+#kurtosis = stats.kurtosis(dfs[selected_df])
 
 # Display metrics
-st.write("Skewness:", skewness)
-st.write("Kurtosis:", kurtosis)
+#st.write("Skewness:", skewness)
+#st.write("Kurtosis:", kurtosis)
 
 
 
