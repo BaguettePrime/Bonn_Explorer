@@ -26,7 +26,7 @@ dfD = pd.read_csv("./data/setD.csv")
 dfE = pd.read_csv("./data/setE.csv")
 
 # create a dictionary to store the dataframes
-dfs = {'DFA': dfA, 'DFB': dfB, 'DFC': dfC, 'DFD': dfD, 'DFE': dfE}
+dfs = {'Set A - Volunteers - Open Eyes': dfA, 'Set B - Volunteers - Closed Eyes': dfB, 'Set C - Patients (epi_zone) - Seizure free': dfC, 'Set D - Patients (Non_epi_zone) - Seizure free': dfD, 'Set E - Patients (epi_zone) - Seizure activity': dfE}
 
 # create a selectbox widget to select the dataframe
 selected_df = st.selectbox('Select a dataframe:', list(dfs.keys()),key = 1)
