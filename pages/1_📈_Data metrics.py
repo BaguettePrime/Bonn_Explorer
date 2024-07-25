@@ -13,7 +13,7 @@ dfD = pd.read_csv("./data/setD.csv")
 dfE = pd.read_csv("./data/setE.csv")
 
 # create a dictionary to store the dataframes
-dfs = {'DFA': dfA, 'DFB': dfB, 'DFC': dfC, 'DFD': dfD, 'DFE': dfE}
+dfs = {'Set A': dfA, 'Set B': dfB, 'Set C': dfC, 'Set D': dfD, 'Set E': dfE}
 
 # create a selectbox widget to select the dataframe
 selected_df = st.selectbox('Select a dataframe:', list(dfs.keys()),key = 1)
