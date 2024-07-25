@@ -33,7 +33,7 @@ The recordings were obtained from 5 different groups:
 * **Set D**: Epileptic patients during seizure free intervals from within the epileptogenic zone
 * **Set E**: pileptic patients during seizure activity (segments were selected from all recording sites exhibiting ictal activity)
 
-The EEG signals were recorded using a 128-channel EEG system, but only a single channel (the Cz electrode) is provided in the dataset. 
+The EEG signals were recorded using a 128-channel EEG system, but only a single channel is provided in the dataset. 
 The sampling rate is 173.61 Hz.
 
 For more information about the Bonn dataset, please refer to the [original paper](https://www.upf.edu/documents/229517819/232450661/Andrzejak-PhysicalReviewE2001.pdf/0e9a54b8-8993-b400-743e-4d64fa29fb63) by Andrzejak et al.
