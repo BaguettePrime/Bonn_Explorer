@@ -27,11 +27,11 @@ It was introduced in 2001 by Ralph Andrzejak and colleagues from the University 
 The Bonn dataset consists of 5 sets (A-E) of EEG recordings, each containing 100 single-channel EEG segments of 23.6 seconds duration. 
 The recordings were obtained from 5 different groups:
 
-* **Set A**: Healthy volunteers
-* **Set B**: Epileptic patients in the seizure-free interval
-* **Set C**: Epileptic patients during a seizure
-* **Set D**: Epileptic patients in the seizure-free interval, but with seizure activity in other brain areas
-* **Set E**: Epileptic patients during a seizure, but with artifacts
+* **Set A**: Volunteers relaxed in an awake state with eyes open from surface electrodes
+* **Set B**: Volunteers relaxed in an awake state with eyes closed from surface electrodes
+* **Set C**: Epileptic patients during seizure free intervals from the hippocampal formation of the opposite hemisphere of the brain
+* **Set D**: Epileptic patients during seizure free intervals from within the epileptogenic zone
+* **Set E**: pileptic patients during seizure activity (segments were selected from all recording sites exhibiting ictal activity)
 
 The EEG signals were recorded using a 128-channel EEG system, but only a single channel (the Cz electrode) is provided in the dataset. 
 The sampling rate is 173.61 Hz.
