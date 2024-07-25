@@ -62,7 +62,17 @@ for band, (fmin, fmax) in bands.items():
 
 dfbands = pd.DataFrame(list(powers.items()), columns=['Band', 'Power'])
 
-fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands')
+#fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands')
+
+colors = st.get_option("theme.colors")
+fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands',
+              color_discrete_sequence=[colors["primary"], colors["secondary"], colors["tertiary"], colors["success"], colors["error"]])
+		
+
+
+
+
+
 with st.expander("PSD bands Graph"):
   st.plotly_chart(fig2, use_container_width=True)
 
