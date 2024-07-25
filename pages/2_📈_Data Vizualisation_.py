@@ -64,9 +64,8 @@ dfbands = pd.DataFrame(list(powers.items()), columns=['Band', 'Power'])
 
 #fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands')
 
-colors = st.get_option("theme.colors")
 fig2 = px.bar(dfbands, x='Band', y='Power', title='Frequency Bands',
-              color_discrete_sequence=[colors["primary"], colors["secondary"], colors["tertiary"], colors["success"], colors["error"]])
+              color_discrete_sequence=['#007bff', '#6c757d', '#28a745', '#17a2b8', '#6610f2'])
 		
 
 
