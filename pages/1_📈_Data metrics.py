@@ -43,8 +43,7 @@ fig1 = px.box(dfs[selected_df], x=selected_column)
 with st.expander('Box plot', expanded=False):
     st.plotly_chart(fig1, use_container_width=True)
 
-fig2 = px.scatter(dfs[selected_df], x=selected_column, y=selected_df1.columns[1])
-#fig2 = px.scatter(dfs[selected_df], x=selected_column)
+fig2 = px.scatter(dfs[selected_df], x=selected_column)
 
 with st.expander('Scatter plot', expanded=False):
     st.plotly_chart(fig2, use_container_width=True)
