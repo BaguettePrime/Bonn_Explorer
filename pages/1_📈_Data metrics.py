@@ -14,7 +14,7 @@ dfE = pd.read_csv("./data/setE.csv")
 dfs = {'Set A - Volunteers - Open Eyes': dfA, 'Set B - Volunteers - Closed Eyes': dfB, 'Set C - Patients (epi_zone) - Seizure free': dfC, 'Set D - Patients (Non_epi_zone) - Seizure free': dfD, 'Set E - Patients (epi_zone) - Seizure activity': dfE}
 
 # create a selectbox widget to select the dataframe
-selected_df = st.selectbox('Select a dataframe:', list(dfs.keys()),key = 1)
+selected_df = st.selectbox('Select a set:', list(dfs.keys()),key = 1)
 selected_df1 = dfs[selected_df]
 column_names = selected_df1.columns.tolist()
 selected_column = st.selectbox('Select a column:', column_names)
